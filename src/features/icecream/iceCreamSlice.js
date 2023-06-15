@@ -4,7 +4,7 @@ const initialState = {
   numOfIcecreams: 20,
 };
 
-import { cakeActions } from "../cake/cakeSlice";
+import { ordered as cakeOrdered } from "../cake/cakeSlice";
 
 const iceCreamSlice = createSlice({
   name: "iceCream",
@@ -18,7 +18,7 @@ const iceCreamSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(cakeActions.ordered, (state) => {
+    builder.addCase(cakeOrdered, (state) => {
       state.numOfIcecreams--;
     });
   },
